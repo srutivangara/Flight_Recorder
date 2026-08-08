@@ -1,0 +1,182 @@
+[
+  {
+    "tool": "web.search",
+    "action_class": "read",
+    "typical_cost_inr": 0,
+    "reversibility_window_min": -1,
+    "data_sensitivity": 0,
+    "blast_radius": 0,
+    "expected_loss_if_wrong_inr": 0,
+    "side_effect": false
+  },
+  {
+    "tool": "web.open_page",
+    "action_class": "read",
+    "typical_cost_inr": 0,
+    "reversibility_window_min": -1,
+    "data_sensitivity": 0,
+    "blast_radius": 0,
+    "expected_loss_if_wrong_inr": 0,
+    "side_effect": false
+  },
+  {
+    "tool": "docs.read",
+    "action_class": "read",
+    "typical_cost_inr": 0,
+    "reversibility_window_min": -1,
+    "data_sensitivity": 2,
+    "blast_radius": 0,
+    "expected_loss_if_wrong_inr": 0,
+    "side_effect": false
+  },
+  {
+    "tool": "db.query",
+    "action_class": "read",
+    "typical_cost_inr": 0,
+    "reversibility_window_min": -1,
+    "data_sensitivity": 2,
+    "blast_radius": 0,
+    "expected_loss_if_wrong_inr": 200,
+    "side_effect": false
+  },
+  {
+    "tool": "calendar.read",
+    "action_class": "read",
+    "typical_cost_inr": 0,
+    "reversibility_window_min": -1,
+    "data_sensitivity": 1,
+    "blast_radius": 0,
+    "expected_loss_if_wrong_inr": 0,
+    "side_effect": false
+  },
+  {
+    "tool": "calendar.create_event",
+    "action_class": "write_low",
+    "typical_cost_inr": 0,
+    "reversibility_window_min": 10080,
+    "data_sensitivity": 1,
+    "blast_radius": 1,
+    "expected_loss_if_wrong_inr": 300,
+    "side_effect": true
+  },
+  {
+    "tool": "docs.write",
+    "action_class": "write_low",
+    "typical_cost_inr": 0,
+    "reversibility_window_min": 1440,
+    "data_sensitivity": 2,
+    "blast_radius": 1,
+    "expected_loss_if_wrong_inr": 800,
+    "side_effect": true
+  },
+  {
+    "tool": "crm.update_record",
+    "action_class": "write_med",
+    "typical_cost_inr": 0,
+    "reversibility_window_min": 1440,
+    "data_sensitivity": 2,
+    "blast_radius": 2,
+    "expected_loss_if_wrong_inr": 4000,
+    "side_effect": true
+  },
+  {
+    "tool": "email.send_internal",
+    "action_class": "comms_low",
+    "typical_cost_inr": 0,
+    "reversibility_window_min": 5,
+    "data_sensitivity": 2,
+    "blast_radius": 2,
+    "expected_loss_if_wrong_inr": 2500,
+    "side_effect": true
+  },
+  {
+    "tool": "email.send_external",
+    "action_class": "comms_high",
+    "typical_cost_inr": 0,
+    "reversibility_window_min": 5,
+    "data_sensitivity": 3,
+    "blast_radius": 3,
+    "expected_loss_if_wrong_inr": 40000,
+    "side_effect": true
+  },
+  {
+    "tool": "files.share_link",
+    "action_class": "share",
+    "typical_cost_inr": 0,
+    "reversibility_window_min": 60,
+    "data_sensitivity": 3,
+    "blast_radius": 3,
+    "expected_loss_if_wrong_inr": 60000,
+    "side_effect": true
+  },
+  {
+    "tool": "restaurant.book",
+    "action_class": "commit_low",
+    "typical_cost_inr": 0,
+    "reversibility_window_min": 2880,
+    "data_sensitivity": 0,
+    "blast_radius": 1,
+    "expected_loss_if_wrong_inr": 600,
+    "side_effect": true
+  },
+  {
+    "tool": "flight.book",
+    "action_class": "commit_med",
+    "typical_cost_inr": 18500,
+    "reversibility_window_min": 1440,
+    "data_sensitivity": 1,
+    "blast_radius": 2,
+    "expected_loss_if_wrong_inr": 18500,
+    "side_effect": true
+  },
+  {
+    "tool": "payments.transfer",
+    "action_class": "money",
+    "typical_cost_inr": 0,
+    "reversibility_window_min": 0,
+    "data_sensitivity": 3,
+    "blast_radius": 3,
+    "expected_loss_if_wrong_inr": 0,
+    "side_effect": true
+  },
+  {
+    "tool": "payments.refund",
+    "action_class": "money",
+    "typical_cost_inr": 0,
+    "reversibility_window_min": 0,
+    "data_sensitivity": 2,
+    "blast_radius": 2,
+    "expected_loss_if_wrong_inr": 0,
+    "side_effect": true
+  },
+  {
+    "tool": "gov.file_return",
+    "action_class": "filing",
+    "typical_cost_inr": 0,
+    "reversibility_window_min": -1,
+    "data_sensitivity": 3,
+    "blast_radius": 3,
+    "expected_loss_if_wrong_inr": 90000,
+    "side_effect": true
+  },
+  {
+    "tool": "infra.deploy",
+    "action_class": "infra",
+    "typical_cost_inr": 0,
+    "reversibility_window_min": 30,
+    "data_sensitivity": 1,
+    "blast_radius": 3,
+    "expected_loss_if_wrong_inr": 75000,
+    "side_effect": true
+  },
+  {
+    "tool": "infra.delete_resource",
+    "action_class": "infra",
+    "typical_cost_inr": 0,
+    "reversibility_window_min": -1,
+    "data_sensitivity": 1,
+    "blast_radius": 3,
+    "expected_loss_if_wrong_inr": 250000,
+    "side_effect": true
+  }
+]

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Flight Recorder • Agent Safety Console</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <div class="eyebrow">PS-I3 • AGENT SAFETY</div>
+    <h1>Flight Recorder</h1>
+    <p>Investigate agent traces, catch tampering, find root causes, and decide when a human must confirm.</p>
+  </div>
+  <div class="status"><span></span> LIVE ANALYSIS</div>
+</header>
+
+<main>
+<section class="hero-grid">
+  <div class="hero-card">
+    <div class="hero-label">MISSION</div>
+    <h2>Turn a messy agent trace into an explainable incident report.</h2>
+    <p>Every session is an ordered chain of user intent → reasoning → retrieval → tools → state changes. The console checks the chain before trusting it.</p>
+  </div>
+  <div class="metrics">
+    <div class="metric"><b>{{ stats.train }}</b><span>Training sessions</span></div>
+    <div class="metric"><b>{{ stats.eval }}</b><span>Evaluation incidents</span></div>
+    <div class="metric"><b>{{ stats.tools }}</b><span>Available tools</span></div>
+    <div class="metric danger"><b>{{ stats.bad_chains }}</b><span>Broken eval chains</span></div>
+  </div>
+</section>
+
+<nav class="tabs">
+  <button class="tab active" data-tab="investigate">Investigate</button>
+  <button class="tab" data-tab="integrity">Chain Verifier</button>
+  <button class="tab" data-tab="policy">Policy Lab</button>
+  <button class="tab" data-tab="learn">Training Set</button>
+</nav>
+
+<section id="investigate" class="tabpane active">
+  <div class="split">
+    <aside class="panel list-panel">
+      <div class="panel-head">
+        <div><div class="eyebrow">EVALUATION QUEUE</div><h3>150 incidents</h3></div>
+        <input id="search" placeholder="Search session or goal…">
+      </div>
+      <div id="sessionList" class="session-list"></div>
+    </aside>
+    <section class="panel detail-panel">
+      <div id="empty" class="empty">
+        <div class="big-icon">⌁</div>
+        <h3>Select an incident</h3>
+        <p>Pick a session on the left. The recorder will reconstruct the chain and explain what looks wrong.</p>
+      </div>
+      <div id="detail" hidden></div>
+    </section>
+  </div>
+</section>
+
+<section id="integrity" class="tabpane">
+  <div class="panel wide">
+    <div class="panel-head"><div><div class="eyebrow">APPEND-ONLY LOG CHECK</div><h2>Chain Verifier</h2></div><button id="verifyBtn" class="primary">Verify 150 chains</button></div>
+    <p class="muted">Each span contains <code>prev_hash</code> and <code>hash</code>. One broken link means the trace may have been edited after the fact.</p>
+    <div id="verifyResult"></div>
+  </div>
+</section>
+
+<section id="policy" class="tabpane">
+  <div class="panel wide">
+    <div class="panel-head"><div><div class="eyebrow">HUMAN-IN-THE-LOOP</div><h2>Policy Lab</h2></div><button id="policyBtn" class="primary">Simulate policy</button></div>
+    <p class="muted">The demo policy asks for confirmation only when a side-effecting action has meaningful expected loss, data sensitivity, or blast radius. Reads pass automatically.</p>
+    <div id="policyResult"></div>
+  </div>
+</section>
+
+<section id="learn" class="tabpane">
+  <div class="panel wide">
+    <div class="eyebrow">WHAT THE DATASET TEACHES</div>
+    <h2>400 labelled sessions → 8 root causes</h2>
+    <div id="classGrid" class="class-grid"></div>
+  </div>
+</section>
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

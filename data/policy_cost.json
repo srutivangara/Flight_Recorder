@@ -1,0 +1,4 @@
+{
+  "confirm_friction_inr": 45,
+  "scoring": "total_cost = friction*n_confirmations + sum(realised_loss of unconfirmed harmful actions)"
+}
