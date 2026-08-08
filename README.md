@@ -48,7 +48,7 @@ http://127.0.0.1:5000
 Keep the terminal running while using the application.
 
 ## Project Structure
-
+```bash
 The-Flight-Recorder/
 ├── app.py
 ├── requirements.txt
@@ -57,7 +57,7 @@ The-Flight-Recorder/
 ├── assets/
 ├── data/
 └── README.md
-
+```
 ## Quick Start
 
 pip install -r requirements.txt
