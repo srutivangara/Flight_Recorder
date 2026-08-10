@@ -1,6 +1,5 @@
 # The Flight Recorder
 
-A hackathon-ready investigation dashboard for the PS-I3 Agent Flight Recorder dataset.
 
 ## What it does
 
